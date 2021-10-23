@@ -39,7 +39,7 @@
 Hello World
 </div> -->
 
-    <div class="row login-form";">
+    <div class="row login-form">
         <form action="?section=UsuarioControle&function=fazerLogin<?php if(isset($id) && $id) echo "&id=".$id;?>" method="POST">
         
             <div class="input-group input-group-lg">
