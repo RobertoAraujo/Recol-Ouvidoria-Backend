@@ -1,7 +1,13 @@
 /* Talisson */
-
 body {
-    /* background-color: #0b55df; */
+    background-color:  rgb(2, 0, 128);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+.login-form {
     background-image: url(../assets/img/background_ouvidoria.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,9 +20,6 @@ body {
       */
 }
 
-.login-form {
-    padding: 30px
-}
 
 .login-form form {
     width: 750px;

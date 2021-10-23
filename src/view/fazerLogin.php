@@ -35,35 +35,37 @@
 
         <?php $verificacao = 1; include('menu.php'); ?>
 <!--INICIO DO FORMULÁRIO -->
+<!-- <div class="container">
+Hello World
+</div> -->
 
-<br>
-<div class="row mt-5 login-form">
-    <form action="?section=UsuarioControle&function=fazerLogin<?php if(isset($id) && $id) echo "&id=".$id;?>" method="POST">
+    <div class="row login-form";">
+        <form action="?section=UsuarioControle&function=fazerLogin<?php if(isset($id) && $id) echo "&id=".$id;?>" method="POST">
         
-    <div class="input-group input-group-lg">
-        <span class="input-group-text usr">USUÁRIO:</span>
-        <input name="cpf" type="number" id="cpf" class="form-control item" onkeypress="return somenteNumerosCPF(event)"  maxlength="11" 
-        required oninvalid="setCustomValidity('O campo CPF não pode estar vazio')" 
-        onchange="try{setCustomValidity('')}catch(e){}"
-        aria-describedby="inputGroup-sizing-lg">
-    </div>
-
-    <div class="input-group input-group-lg">
-        <span class="input-group-text usr" id="inputGroup-sizing-lg">SENHA:</span>
-        
-        <input name="senha" type="password" class="form-control item" maxlength="100" 
-        required oninvalid="setCustomValidity('O campo senha não pode estar vazio')"
-        onchange="try{setCustomValidity('')}catch(e){}"
-        aria-describedby="inputGroup-sizing-lg">
-        <?php if(isset($msgLogin) && !$msgLogin): ?> <span style='color:red;' role="alert">Senha ou Login inválidos!</span> <br> <?php endif; ?>
-    </div>
-
-    <div class="form-group">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text usr">USUÁRIO:</span>
+                <input name="cpf" type="number" id="cpf" class="form-control item" onkeypress="return somenteNumerosCPF(event)"  maxlength="11" 
+                required oninvalid="setCustomValidity('O campo CPF não pode estar vazio')" 
+                onchange="try{setCustomValidity('')}catch(e){}"
+                aria-describedby="inputGroup-sizing-lg">
+            </div>
+            
+            <div class="input-group input-group-lg">
+                <span class="input-group-text usr" id="inputGroup-sizing-lg">SENHA:</span>
+                
+                <input name="senha" type="password" class="form-control item" maxlength="100" 
+                required oninvalid="setCustomValidity('O campo senha não pode estar vazio')"
+                onchange="try{setCustomValidity('')}catch(e){}"
+                aria-describedby="inputGroup-sizing-lg">
+                <?php if(isset($msgLogin) && !$msgLogin): ?> <span style='color:red;' role="alert">Senha ou Login inválidos!</span> <br> <?php endif; ?>
+                </div>
+                
+        <div class="form-group">
             <button type="submit" value="Entrar" class="btn btn-block login-account">ENVIAR</button>
-    </div>
+        </div>
     </form><!--FIM DO FORMULÁRIO -->
-    
+
 </div>
-       
-    </body>
+
+</body>
 </html>
