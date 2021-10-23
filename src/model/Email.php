@@ -34,7 +34,7 @@ class Email
 
         // configuração do email a ver enviado.
         $mail->From = "endriosrobert1501@gmail.com";
-        $mail->FromName = "Ouvidoria de Rio Branco";
+        $mail->FromName = "Ouvidoria de Recol Distribuidora";
 
         $mail->addAddress($emailDestino); // email do destinatario.
         $mail->Subject = utf8_decode($assunto);

@@ -13,7 +13,7 @@
         <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="shortcut icon" href="logo.jpg">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../css/style.css">
 
         <!-- ESTILOS PARA ESTA PÁGINA -->
         <!-- Nesse caso, este estilo é apenas para inserir imagens -->
@@ -34,26 +34,36 @@
     <body>
 
         <?php $verificacao = 1; include('menu.php'); ?>
+<!--INICIO DO FORMULÁRIO -->
 
-        <!--INICIO DO FORMULÁRIO -->
+<br>
+<div class="row mt-5 login-form">
+    <form action="?section=UsuarioControle&function=fazerLogin<?php if(isset($id) && $id) echo "&id=".$id;?>" method="POST">
+        
+    <div class="input-group input-group-lg">
+        <span class="input-group-text usr">USUÁRIO:</span>
+        <input name="cpf" type="number" id="cpf" class="form-control item" onkeypress="return somenteNumerosCPF(event)"  maxlength="11" 
+        required oninvalid="setCustomValidity('O campo CPF não pode estar vazio')" 
+        onchange="try{setCustomValidity('')}catch(e){}"
+        aria-describedby="inputGroup-sizing-lg">
+    </div>
 
-        <br>
-        <div class="row mt-5">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-            <h3>Fazer Login</h3>
+    <div class="input-group input-group-lg">
+        <span class="input-group-text usr" id="inputGroup-sizing-lg">SENHA:</span>
+        
+        <input name="senha" type="password" class="form-control item" maxlength="100" 
+        required oninvalid="setCustomValidity('O campo senha não pode estar vazio')"
+        onchange="try{setCustomValidity('')}catch(e){}"
+        aria-describedby="inputGroup-sizing-lg">
+        <?php if(isset($msgLogin) && !$msgLogin): ?> <span style='color:red;' role="alert">Senha ou Login inválidos!</span> <br> <?php endif; ?>
+    </div>
 
-            <form action="?section=UsuarioControle&function=fazerLogin<?php if(isset($id) && $id) echo "&id=".$id;?>" method="POST">
-                <label>CPF:</label>
-                <input name="cpf" type="number" onkeypress="return somenteNumerosCPF(event)" id="cpf" class="form-control" maxlength="11" required oninvalid="setCustomValidity('O campo CPF não pode estar vazio')" onchange="try{setCustomValidity('')}catch(e){}"/>
-                <br>
-                <label>Senha:</label>
-                <input name="senha" type="password" class="form-control" maxlength="100" required oninvalid="setCustomValidity('O campo senha não pode estar vazio')" onchange="try{setCustomValidity('')}catch(e){}"/>
-                <?php if(isset($msgLogin) && !$msgLogin): ?> <span style='color:red;' role="alert">Senha ou Login inválidos!</span> <br> <?php endif; ?>
-                <br>
-                <input type="submit" value="Entrar" class="btn btn-outline-success btn-lg active float-right"/>
-            </form><!--FIM DO FORMULÁRIO -->
-            </div>
-        </div>
+    <div class="form-group">
+            <button type="submit" value="Entrar" class="btn btn-block login-account">ENVIAR</button>
+    </div>
+    </form><!--FIM DO FORMULÁRIO -->
+    
+</div>
+       
     </body>
 </html>
